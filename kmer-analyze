@@ -1,0 +1,23 @@
+aa_list = []
+for line in open ("aa.txt"): #open says read from this file aa.txt
+	line = line.strip() #strip removes the characters after & before each line
+	aalist.append(line)
+#print aalist
+
+#start = aalist[0] #start at position 0
+#print start
+
+#to create empty dictionary use {}
+aadict = {}
+#kmers of length 4
+k=5
+for read in aalist:
+	for j in range (0, len(read) - k+1):
+		kmer = read [j:j+k]
+		aadict[kmer] = aadict.get (kmer,0)+1
+		#print j, kmer, aadict[kmer]
+		
+for kmer in aadict:
+	print aadict[kmer], kmer
+	
+	#find first argument in the command line and take that file
